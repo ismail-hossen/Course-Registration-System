@@ -1,0 +1,65 @@
+[
+  {
+    "cName": "Introduction to C Programming",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 15000,
+    "credit": "1hr",
+    "image": ""
+  },
+  {
+    "cName": "Introduction to Algorithms",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 25000,
+    "credit": "2hr",
+    "image": ""
+  },
+  {
+    "cName": "Introduction to C++ for DSA",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 10000,
+    "credit": "10hr",
+    "image": ""
+  },
+  {
+    "cName": "Basic Data Structures",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 35000,
+    "credit": "5hr",
+    "image": ""
+  },
+  {
+    "cName": "Introduction to OOP Python",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 19000,
+    "credit": "5hr",
+    "image": ""
+  },
+  {
+    "cName": "Software Engineering",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 23000,
+    "credit": "2hr",
+    "image": ""
+  },
+  {
+    "cName": "AWS, Cloud Computing",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 35000,
+    "credit": "5hr",
+    "image": ""
+  },
+  {
+    "cName": "Database (MySQL)",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 19000,
+    "credit": "5hr",
+    "image": ""
+  },
+  {
+    "cName": "Problem-Solving Part",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "price": 23000,
+    "credit": "2hr",
+    "image": ""
+  }
+]
