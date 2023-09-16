@@ -1,8 +1,19 @@
-# React + Vite
+# Add at least 3 Project features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- In this project have some courses and every course showing as a card and in
+  every card have a button for select a course. You can select courses in
+  between 20 credit hours.
 
-Currently, two official plugins are available:
+- If you select courses as much as possible in between 20 credit hours. All the
+  courses you have selected the all courses name will be displayed on the right
+  side.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- In this project have total price calculation for all the courses you have
+  selected and will be displayed on the right side
+
+# Discuss how you managed the state in your assignment project.
+
+- For managing state i have used useState() hook which is a built in hook of
+  react. When needed to load all courses data, then i used useEffect() hook to
+  fetch the data and store the data using useState() hook to manage the state in
+  a component.
