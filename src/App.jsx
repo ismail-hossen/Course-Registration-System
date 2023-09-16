@@ -1,11 +1,7 @@
-import "./App.css";
+import CourseArea from "./components/CourseArea";
 
 function App() {
-  return (
-    <div>
-      <h1 className="bg-white">ismail hosen</h1>
-    </div>
-  );
+  return <CourseArea></CourseArea>;
 }
 
 export default App;
