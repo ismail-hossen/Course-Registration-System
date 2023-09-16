@@ -13,32 +13,34 @@ const CourseArea = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
 
-    const TCreditHr = selectedData.reduce(
-      (prev, currentValue) => prev + parseInt(currentValue.credit),
-      0
-    );
-
     const totalPrice = selectedData.reduce(
       (prev, currentValue) => prev + currentValue.price,
       0
     );
     setPrice(totalPrice);
-
-    if (TCreditHr <= 20) {
-      setTotalCredit(TCreditHr);
-    }
-  }, [setTotalCredit, selectedData]);
+  }, [selectedData]);
 
   const handleSelect = (item) => {
-    if (totalCredit != 20) {
+    let TCreditHr = selectedData.reduce(
+      (prev, currentValue) => prev + parseInt(currentValue.credit),
+      0
+    );
+
+    TCreditHr += parseInt(item.credit);
+
+    if (TCreditHr <= 20) {
       const exists = selectedData?.filter((course) => course.id == item.id);
       if (exists.length == 0) {
+        setTotalCredit(TCreditHr);
         setSelectedData([...selectedData, item]);
       } else {
         alert("Already Selected");
         return;
       }
-    } else return;
+    } else {
+      alert("You trying to buy credit over");
+      return;
+    }
   };
 
   return (
