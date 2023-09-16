@@ -4,11 +4,43 @@ import CourseName from "./CourseName";
 
 const CourseArea = () => {
   const [data, setData] = useState([]);
+  const [selectedData, setSelectedData] = useState([]);
+  const [totalCredit, setTotalCredit] = useState(Number);
+  const [price, setPrice] = useState(Number);
+
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, []);
+
+    const TCreditHr = selectedData.reduce(
+      (prev, currentValue) => prev + parseInt(currentValue.credit),
+      0
+    );
+
+    const totalPrice = selectedData.reduce(
+      (prev, currentValue) => prev + currentValue.price,
+      0
+    );
+    setPrice(totalPrice);
+
+    if (TCreditHr <= 20) {
+      setTotalCredit(TCreditHr);
+    }
+  }, [setTotalCredit, selectedData]);
+
+  const handleSelect = (item) => {
+    if (totalCredit != 20) {
+      const exists = selectedData?.filter((course) => course.id == item.id);
+      if (exists.length == 0) {
+        setSelectedData([...selectedData, item]);
+      } else {
+        alert("Already Selected");
+        return;
+      }
+    } else return;
+  };
+
   return (
     <div className="px-16">
       <h1 className="text-center text-black text-4xl font-bold mt-6">
@@ -17,11 +49,19 @@ const CourseArea = () => {
       <div className="flex gap-3">
         <div className="grid grid-cols-3 w-8/12 gap-3 mt-4">
           {data?.map((d, index) => (
-            <CourseCard key={index} allCourses={d}></CourseCard>
+            <CourseCard
+              handleSelect={handleSelect}
+              key={index}
+              allCourses={d}
+            ></CourseCard>
           ))}
         </div>
         <div>
-          <CourseName></CourseName>
+          <CourseName
+            totalCredit={totalCredit}
+            totalPrice={price}
+            selectedData={selectedData}
+          ></CourseName>
         </div>
       </div>
     </div>

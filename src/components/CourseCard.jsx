@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const CourseCard = ({ allCourses }) => {
+const CourseCard = ({ allCourses, handleSelect }) => {
   const { cName, description, price, image, credit } = allCourses || {};
   return (
     <div className="flex flex-col bg-white w-96 rounded-xl p-3 gap-3">
@@ -11,9 +11,12 @@ const CourseCard = ({ allCourses }) => {
         <span>
           Price: <span>{price}</span>
         </span>
-        <span>Credit: {credit}hr</span>
+        <span>Credit: {credit}</span>
       </p>
-      <button className="bg-blue-900 text-white font-semibold rounded-md w-full p-2">
+      <button
+        onClick={() => handleSelect(allCourses)}
+        className="bg-blue-900 text-white font-semibold rounded-md w-full p-2"
+      >
         Select
       </button>
     </div>
@@ -24,4 +27,5 @@ export default CourseCard;
 
 CourseCard.propTypes = {
   allCourses: PropTypes.object,
+  handleSelect: PropTypes.func,
 };
